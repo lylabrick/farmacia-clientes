@@ -1,0 +1,14 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: farmacia
+      auto-index-creation: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.data.mongodb: DEBUG
+    com.lylabrick.farmacia: DEBUG

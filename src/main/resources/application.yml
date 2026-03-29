@@ -12,3 +12,25 @@ logging:
   level:
     org.springframework.data.mongodb: DEBUG
     com.lylabrick.farmacia: DEBUG
+
+# SpringDoc OpenAPI (Swagger) Configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+  packages-to-scan: com.lylabrick.farmacia
+
+# OpenAPI Info
+openapi:
+  service:
+    title: Farmacia Clientes API
+    description: Reactive REST API for managing pharmacy customers
+    version: 1.0.0
+    contact:
+      name: Laura Labrick
+      email: laura@lylabrick.com

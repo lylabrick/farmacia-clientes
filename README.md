@@ -10,6 +10,7 @@ Pharmacy customer management system with reactive REST API built with Spring Boo
 - **Spring Data MongoDB Reactive**
 - **Lombok**
 - **Maven**
+- **SpringDoc OpenAPI 2.6.0** (Swagger UI)
 
 ## Prerequisites
 
@@ -39,6 +40,19 @@ mvn spring-boot:run
 ```
 
 The application will start on `http://localhost:8080`
+
+## API Documentation (Swagger/OpenAPI)
+
+Once the application is running, you can access the interactive API documentation at:
+
+- **Swagger UI**: http://localhost:8080/swagger-ui.html
+- **OpenAPI JSON**: http://localhost:8080/v3/api-docs
+
+The Swagger UI provides:
+- Interactive API documentation
+- Try out endpoints directly from the browser
+- View request/response schemas
+- See all available endpoints with descriptions
 
 ## API Endpoints
 
@@ -98,12 +112,16 @@ curl -X DELETE http://localhost:8080/api/customers/{id}
 farmacia-clientes/
 ├── src/main/java/com/lylabrick/farmacia/
 │   ├── FarmaciaClientesApplication.java
+│   ├── config/
+│   │   └── OpenApiConfig.java          # Swagger/OpenAPI configuration
 │   ├── entity/
 │   │   └── Customer.java
 │   ├── repository/
 │   │   └── CustomerRepository.java
 │   ├── service/
-│   │   └── CustomerService.java
+│   │   ├── CustomerServiceInterface.java
+│   │   └── impl/
+│   │       └── CustomerServiceImpl.java
 │   └── controller/
 │       └── CustomerController.java
 ├── src/main/resources/

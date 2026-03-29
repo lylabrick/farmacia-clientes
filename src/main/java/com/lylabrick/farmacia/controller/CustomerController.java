@@ -1,7 +1,7 @@
 package com.lylabrick.farmacia.controller;
 
 import com.lylabrick.farmacia.entity.Customer;
-import com.lylabrick.farmacia.service.CustomerService;
+import com.lylabrick.farmacia.service.CustomerServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
 @CrossOrigin(origins = "*")
 public class CustomerController {
 
-    private final CustomerService customerService;
+    private final CustomerServiceInterface customerService;
 
     @GetMapping
     public Flux<Customer> getAllCustomers() {
